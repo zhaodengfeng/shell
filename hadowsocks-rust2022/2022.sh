@@ -10,14 +10,14 @@ mkdir -p /etc/shadowsocks
 if [[ -f /etc/shadowsocks/config.json ]]; then
       echo "配置文件已经存在"
 else
-      password=$(openssl rand -base64 32)
+      password=$(openssl rand -base64 16)
       cat <<EOF >/etc/shadowsocks/config.json
 {
     "server": "0.0.0.0",
-    "server_port": 1024,
+    "server_port": $(shuf -i 10000-65000 -n 1),
     "password": "$password",
     "timeout": 600,
-    "method": "2022-blake3-aes-256-gcm"
+    "method": "2022-blake3-aes-128-gcm"
 }
 EOF
 fi
