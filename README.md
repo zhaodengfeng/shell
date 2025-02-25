@@ -3,7 +3,7 @@
 ###  Shadowsocks-rust 2022 
 
 ```sh
-bash <(curl -sSL 19510272.xyz/2022)
+wget -O install.sh https://raw.githubusercontent.com/zhaodengfeng/shell/hadowsocks-rust2022/main/2022.sh && chmod +x 2022.sh && bash 2022.sh
 ```
 
 
